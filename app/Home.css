@@ -1,0 +1,8 @@
+.home {
+  @apply bg-gray-900 flex flex-col justify-center items-center;
+  height: calc(100vh - 92px);
+
+  > img {
+    @apply object-contain h-full w-full;
+  }
+}
