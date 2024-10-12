@@ -3,9 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useGlobalContext } from "@/app/context/globalContext";
+import { logout } from "@/app/firebase/auth";
 import "./Nav.css";
 
 export default function Nav() {
+  const { user, isAdmin } = useGlobalContext();
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
@@ -17,6 +20,19 @@ export default function Nav() {
       <Link href="/ebooks" className={isActive("/ebooks") ? "active-red" : ""}>
         Ebooks
       </Link>
+      {isAdmin && (
+        <Link href="/admin" className={isActive("/admin") ? "active-blue" : ""}>
+          Admin
+        </Link>
+      )}
+      {user && (
+        <Link
+          href="#"
+          onClick={logout}
+        >
+          Logout
+        </Link>
+      )}
     </nav>
   );
 }

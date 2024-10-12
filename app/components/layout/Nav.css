@@ -3,11 +3,11 @@
     @apply text-white text-lg hover:underline;
 
     &.active-blue {
-      @apply text-blue-50;
+      @apply text-blue-50 font-bold;
     }
 
     &.active-red {
-      @apply text-red-50;
+      @apply text-red-50 font-bold;
     }
   }
 }
