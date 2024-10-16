@@ -16,7 +16,7 @@ import { Ebook, Course, Video } from "../types";
 export const db = getFirestore(app);
 
 // eBooks CRUD
-export const createEbook = async (ebook: Omit<Ebook, "id">) => {
+export const createEbook = async (ebook: Omit<Ebook, "id" | "createdAt" | "updatedAt">) => {
   const docRef = await addDoc(collection(db, "ebooks"), {
     ...ebook,
     createdAt: new Date(),
@@ -63,7 +63,7 @@ export const readEbooks = async () => {
 };
 
 // Courses CRUD
-export const createCourse = async (course: Omit<Course, "id">) => {
+export const createCourse = async (course: Omit<Course, "id" | "createdAt" | "updatedAt">) => {
   const docRef = await addDoc(collection(db, "courses"), {
     ...course,
     createdAt: new Date(),

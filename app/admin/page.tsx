@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useGlobalContext } from "../context/globalContext";
+import EbookForm from "../components/Forms/EbookForm";
+import EbooksList from "../components/Lists/EbooksList/EbooksList";
+
+import "./Admin.css";
 
 export default function Admin() {
-  const { user, isAdmin } = useGlobalContext();
+  const { user, isAdmin, viewUpdateEbookForm, setViewUpdateEbookForm, ebookClickedForUpdate } = useGlobalContext();
+  const [viewEbookForm, setViewEbookForm] = useState(false);
 
   const router = useRouter();
 
@@ -15,13 +20,23 @@ export default function Admin() {
     }
   }, [user, isAdmin, router]);
 
+  useEffect(() => {
+    if (ebookClickedForUpdate) {
+      setViewUpdateEbookForm(true);
+    }
+  }, [ebookClickedForUpdate]);
+
   if (!user || !isAdmin) {
     return null;
   }
 
   return (
-    <div className="bg-black text-white flex flex-col flex-1">
-
+    <div className="admin">
+      <h1>Admin</h1>
+      <button onClick={() => setViewEbookForm(!viewEbookForm)}>Criar Ebook</button>
+      {viewEbookForm && <EbookForm />}
+      {viewUpdateEbookForm && <EbookForm ebook={ebookClickedForUpdate} />}
+      <EbooksList />
     </div>
   );
 }

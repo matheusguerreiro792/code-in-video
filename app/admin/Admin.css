@@ -1,0 +1,11 @@
+.admin {
+  @apply bg-blue-600 flex flex-col flex-1 p-4 gap-4 items-center;
+
+  > h1 {
+    @apply text-3xl font-bold text-white bg-red-600 p-4 w-full text-center rounded;
+  }
+
+  > button {
+    @apply bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-lg py-2 px-3 w-fit rounded;
+  }
+}

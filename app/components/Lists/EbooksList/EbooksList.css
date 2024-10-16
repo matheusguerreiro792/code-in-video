@@ -1,0 +1,3 @@
+.ebooks-list {
+  @apply bg-gray-700 flex flex-col gap-4 p-4 w-full rounded;
+}
