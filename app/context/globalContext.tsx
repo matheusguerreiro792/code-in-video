@@ -8,7 +8,7 @@ import React, {
   ReactNode,
   FC,
   SetStateAction,
-  Dispatch
+  Dispatch,
 } from "react";
 
 import { User } from "firebase/auth";
@@ -20,6 +20,8 @@ type GlobalContextType = {
   user: User | null;
   isAdmin: boolean;
   ebooks: Ebook[];
+  viewEbookForm: boolean;
+  setViewEbookForm: Dispatch<SetStateAction<boolean>>;
   viewUpdateEbookForm: boolean;
   setViewUpdateEbookForm: Dispatch<SetStateAction<boolean>>;
   ebookClickedForUpdate: Ebook | null;
@@ -30,6 +32,8 @@ const GlobalContext = createContext<GlobalContextType>({
   user: null,
   isAdmin: false,
   ebooks: [],
+  viewEbookForm: false,
+  setViewEbookForm: () => {},
   viewUpdateEbookForm: false,
   setViewUpdateEbookForm: () => {},
   ebookClickedForUpdate: null,
@@ -37,15 +41,16 @@ const GlobalContext = createContext<GlobalContextType>({
 });
 
 const EBOOKS_CACHE_KEY = "cached_ebooks";
-const CACHE_EXPIRY_TIME = 1000 * 60 // * 60 * 12;
+const CACHE_EXPIRY_TIME = 1000 * 60; // * 60 * 12;
 
 export const GlobalProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [adminStatus, setAdminStatus] = useState(false);
   const [ebooks, setEbooks] = useState<Ebook[]>([]);
+  const [viewEbookForm, setViewEbookForm] = useState(false);
   const [viewUpdateEbookForm, setViewUpdateEbookForm] = useState(false);
-  const [ebookClickedForUpdate, setEbookClickedForUpdate] = useState<Ebook | null>(null);
-  
+  const [ebookClickedForUpdate, setEbookClickedForUpdate] =
+    useState<Ebook | null>(null);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -85,10 +90,12 @@ export const GlobalProvider: FC<{ children: ReactNode }> = ({ children }) => {
     user,
     isAdmin: adminStatus,
     ebooks,
+    viewEbookForm,
+    setViewEbookForm,
     viewUpdateEbookForm,
     setViewUpdateEbookForm,
     ebookClickedForUpdate,
-    setEbookClickedForUpdate
+    setEbookClickedForUpdate,
   };
 
   return (

@@ -9,8 +9,15 @@ import EbooksList from "../components/Lists/EbooksList/EbooksList";
 import "./Admin.css";
 
 export default function Admin() {
-  const { user, isAdmin, viewUpdateEbookForm, setViewUpdateEbookForm, ebookClickedForUpdate } = useGlobalContext();
-  const [viewEbookForm, setViewEbookForm] = useState(false);
+  const {
+    user,
+    isAdmin,
+    viewEbookForm,
+    setViewEbookForm,
+    viewUpdateEbookForm,
+    setViewUpdateEbookForm,
+    ebookClickedForUpdate,
+  } = useGlobalContext();
 
   const router = useRouter();
 
@@ -33,7 +40,7 @@ export default function Admin() {
   return (
     <div className="admin">
       <h1>Admin</h1>
-      <button onClick={() => setViewEbookForm(!viewEbookForm)}>Criar Ebook</button>
+      <button onClick={() => setViewEbookForm(!viewEbookForm)}>Ebook</button>
       {viewEbookForm && <EbookForm />}
       {viewUpdateEbookForm && <EbookForm ebook={ebookClickedForUpdate} />}
       <EbooksList />

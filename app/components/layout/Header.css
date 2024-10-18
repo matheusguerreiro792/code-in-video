@@ -1,3 +1,11 @@
 .header {
-  @apply bg-gray-900 text-white flex gap-2 px-2 py-2 items-end;
+  @apply bg-gray-900 text-gray-50 flex gap-2 px-2 py-2 items-end;
+
+  > h1 {
+    @apply text-4xl ubuntu-mono flex items-baseline gap-2;
+
+    > label {
+      @apply text-2xl;
+    }
+  }
 }

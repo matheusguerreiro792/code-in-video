@@ -11,8 +11,15 @@ export default function Header() {
 
   return (
     <header className={headerClass}>
-      <Image src="/white_logo_256.png" alt="Logo" width={64} height={64} />
-      <h1 className="text-3xl font-bold">Compartilhando Conhecimento</h1>
+      <Image
+        src="/code_in_book_and_video.png"
+        alt="Código em Livro e Vídeo"
+        width={64}
+        height={64}
+      />
+      <h1>
+        Código<label>em Livro e Vídeo</label>
+      </h1>
     </header>
   );
 }

@@ -2,15 +2,7 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-.noto-sans {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
@@ -562,13 +554,6 @@ video {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.font-bold{
-  font-weight: 700;
-}
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -603,17 +588,50 @@ main{
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/components/layout/Header.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
 .header {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+
+  > h1 {
     display: flex;
-    align-items: flex-end;
+  }
+
+  > h1 {
+    align-items: baseline;
+  }
+
+  > h1 {
     gap: 0.5rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity))
+  }
+
+  > h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  > h1 {
+    font-family: "Ubuntu Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+
+  > h1 {
+
+    > label {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
 }
 
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -633,22 +651,13 @@ main{
   }
   > a {
 
-    &.active-blue {
+    &.active {
       font-weight: 700
     }
 
-    &.active-blue {
+    &.active {
       --tw-text-opacity: 1;
       color: rgb(239 246 255 / var(--tw-text-opacity))
-    }
-
-    &.active-red {
-      font-weight: 700
-    }
-
-    &.active-red {
-      --tw-text-opacity: 1;
-      color: rgb(254 242 242 / var(--tw-text-opacity))
     }
   }
 }

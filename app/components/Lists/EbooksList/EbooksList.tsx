@@ -8,9 +8,11 @@ export default function EbooksList() {
 
   return (
     <ul className="ebooks-list">
-      {ebooks?.map((ebook) => (
-        <EbookItem key={ebook.id} ebook={ebook} />
-      ))}
+      {ebooks?.length > 0 ? (
+        ebooks.map((ebook) => <EbookItem key={ebook.id} ebook={ebook} />)
+      ) : (
+        <label>There is no Ebooks!</label>
+      )}
     </ul>
   );
 }

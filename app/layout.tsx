@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Compartilhando Conhecimento",
+  title: "Código em Livro e Vídeo",
   description: "...",
 };
 

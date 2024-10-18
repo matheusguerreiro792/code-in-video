@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-.noto-sans {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .ubuntu-mono {
+    font-family: "Ubuntu Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+}
 
 * {
   font-family: "Noto Sans", sans-serif;

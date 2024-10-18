@@ -14,22 +14,19 @@ export default function Nav() {
 
   return (
     <nav className="nav bg-gray-800 text-white flex justify-center items-center gap-4 px-4 py-3">
-      <Link href="/" className={isActive("/") ? "active-blue" : ""}>
+      <Link href="/" className={isActive("/") ? "active" : ""}>
         Home
       </Link>
-      <Link href="/ebooks" className={isActive("/ebooks") ? "active-red" : ""}>
+      <Link href="/ebooks" className={isActive("/ebooks") ? "active" : ""}>
         Ebooks
       </Link>
       {isAdmin && (
-        <Link href="/admin" className={isActive("/admin") ? "active-blue" : ""}>
+        <Link href="/admin" className={isActive("/admin") ? "active" : ""}>
           Admin
         </Link>
       )}
       {user && (
-        <Link
-          href="#"
-          onClick={logout}
-        >
+        <Link href="#" onClick={logout}>
           Logout
         </Link>
       )}

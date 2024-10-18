@@ -1,4 +1,4 @@
-// File: /home/mg/github/sharing-knowledge/app/page.tsx
+// File: /home/mg/github/code-in-book-and-video/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

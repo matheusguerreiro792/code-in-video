@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import { Ebook } from "@/app/types";
 import { createEbook, updateEbook } from "@/app/firebase/firestore";
+import { useGlobalContext } from "@/app/context/globalContext";
 
 import "./EbookForm.css";
 
@@ -9,6 +10,7 @@ interface EbookFormProps {
 }
 
 export default function EbookForm({ ebook }: EbookFormProps) {
+  const { setViewEbookForm, setViewUpdateEbookForm } = useGlobalContext();
   const [title, setTitle] = useState(ebook?.title || "");
   const [description, setDescription] = useState(ebook?.description || "");
   const [coverUrl, setCoverUrl] = useState(ebook?.coverUrl || "");
@@ -49,10 +51,12 @@ export default function EbookForm({ ebook }: EbookFormProps) {
       await updateEbook(ebook.id, ebookData);
       alert("Ebook atualizado com sucesso!");
       setInitialValues();
+      setViewUpdateEbookForm(false);
     } else {
       await createEbook(ebookData);
       alert("Ebook criado com sucesso!");
       setInitialValues();
+      setViewEbookForm(false);
     }
   };
 

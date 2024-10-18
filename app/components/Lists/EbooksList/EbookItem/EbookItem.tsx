@@ -10,24 +10,32 @@ interface EbookItemProps {
 }
 
 export default function EbookItem({ key, ebook }: EbookItemProps) {
-  const { setEbookClickedForUpdate, setViewUpdateEbookForm, viewUpdateEbookForm } = useGlobalContext();
+  const {
+    setEbookClickedForUpdate,
+    setViewUpdateEbookForm,
+    viewUpdateEbookForm,
+  } = useGlobalContext();
 
   const handleUpdate = async () => {
     setEbookClickedForUpdate(ebook);
     setViewUpdateEbookForm(!viewUpdateEbookForm);
-  }
+  };
 
   const handleDelete = async () => {
     await deleteEbook(ebook.id);
     alert("Ebook deletado com sucesso!");
-  }
+  };
 
   return (
     <li className="ebook-item" key={key}>
       <h3>{ebook.title}</h3>
       <div className="ud">
-        <button onClick={handleUpdate}>Atualizar</button>
-        <button onClick={handleDelete}>Deletar</button>
+        <button className="update" onClick={handleUpdate}>
+          Atualizar
+        </button>
+        <button className="delete" onClick={handleDelete}>
+          Deletar
+        </button>
       </div>
     </li>
   );
