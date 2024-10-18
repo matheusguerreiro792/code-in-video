@@ -16,7 +16,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
   const [coverUrl, setCoverUrl] = useState(ebook?.coverUrl || "");
   const [price, setPrice] = useState(ebook?.price || 0);
   const [purchaseUrl, setPurchaseUrl] = useState(ebook?.purchaseUrl || "");
-  const [category, setCategory] = useState(ebook?.category || "");
+  const [technology, setTechnology] = useState(ebook?.technology || "");
   const [author, setAuthor] = useState(ebook?.author || "");
   const [platform, setPlatform] = useState(ebook?.platform || "");
 
@@ -26,7 +26,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
     setCoverUrl("");
     setPrice(0);
     setPurchaseUrl("");
-    setCategory("");
+    setTechnology("");
     setAuthor("");
     setPlatform("");
   };
@@ -35,14 +35,14 @@ export default function EbookForm({ ebook }: EbookFormProps) {
     event.preventDefault();
 
     const ebookData = {
-      title,
-      description,
-      coverUrl,
+      title: title.trim(),
+      description: description.trim(),
+      coverUrl: coverUrl.trim(),
       price,
-      purchaseUrl,
-      category,
-      author,
-      platform,
+      purchaseUrl: purchaseUrl.trim(),
+      technology: technology.trim(),
+      author: author.trim(),
+      platform: platform.trim(),
       createdAt: ebook?.createdAt || new Date(),
       updatedAt: new Date(),
     };
@@ -68,55 +68,55 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           type="text"
           placeholder="Título"
           value={title}
-          onChange={(event) => setTitle(event.target.value.trim())}
+          onChange={(event) => setTitle(event.target.value)}
           required
         />
         <textarea
           placeholder="Descricão"
           value={description}
-          onChange={(event) => setDescription(event.target.value.trim())}
+          onChange={(event) => setDescription(event.target.value)}
           required
         />
         <input
           type="text"
           placeholder="URL da Capa"
           value={coverUrl}
-          onChange={(event) => setCoverUrl(event.target.value.trim())}
+          onChange={(event) => setCoverUrl(event.target.value)}
           required
         />
         <input
           type="number"
           placeholder="Preço"
           value={price}
-          onChange={(event) => setPrice(Number(event.target.value.trim()))}
+          onChange={(event) => setPrice(Number(event.target.value))}
           required
         />
         <input
           type="text"
           placeholder="URL da Compra"
           value={purchaseUrl}
-          onChange={(event) => setPurchaseUrl(event.target.value.trim())}
+          onChange={(event) => setPurchaseUrl(event.target.value)}
           required
         />
         <input
           type="text"
-          placeholder="Categoria"
-          value={category}
-          onChange={(event) => setCategory(event.target.value.trim())}
+          placeholder="Tecnologia"
+          value={technology}
+          onChange={(event) => setTechnology(event.target.value)}
           required
         />
         <input
           type="text"
           placeholder="Autor"
           value={author}
-          onChange={(event) => setAuthor(event.target.value.trim())}
+          onChange={(event) => setAuthor(event.target.value)}
           required
         />
         <input
           type="text"
           placeholder="Plataforma"
           value={platform}
-          onChange={(event) => setPlatform(event.target.value.trim())}
+          onChange={(event) => setPlatform(event.target.value)}
           required
         />
         <button type="submit">{ebook?.id ? "Atualizar" : "Criar"}</button>

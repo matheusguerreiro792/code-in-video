@@ -14,7 +14,6 @@ export const login = async (email: string, password: string) => {
     return userCredential.user;
   } catch (error) {
     console.log(error);
-    throw error;
   }
 };
 
@@ -23,7 +22,6 @@ export const logout = async () => {
     await signOut(auth);
   } catch (error) {
     console.log(error);
-    throw error;
   }
 };
 

@@ -1,0 +1,11 @@
+.ebooks {
+  @apply bg-gray-50 flex flex-1 flex-wrap p-8 gap-8;
+
+  > img {
+    @apply h-max w-auto rounded border-2 border-transparent hover:border-2 hover:border-black cursor-pointer active:opacity-75;
+  }
+
+  > label {
+    @apply text-red-600 font-bold;
+  }
+}

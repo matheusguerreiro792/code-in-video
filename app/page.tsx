@@ -8,8 +8,8 @@ export default function Home() {
       <Image
         src="/code_in_book_and_video.png"
         alt="Logo"
-        width={1860}
-        height={1092}
+        width={1536}
+        height={973}
       />
       <h1>código</h1>
       <h3>em Livro e Vídeo</h3>

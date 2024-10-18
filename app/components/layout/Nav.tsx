@@ -18,7 +18,7 @@ export default function Nav() {
         Home
       </Link>
       <Link href="/ebooks" className={isActive("/ebooks") ? "active" : ""}>
-        Ebooks
+        Livros
       </Link>
       {isAdmin && (
         <Link href="/admin" className={isActive("/admin") ? "active" : ""}>

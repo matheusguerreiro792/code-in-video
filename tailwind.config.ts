@@ -11,8 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "app-blue": "#3285f4",
-        "app-red": "#ea4325",
+        "g-blue": "#4285F4",
+        "g-red": "#EA4335",
+        "g-yellow": "#FBBC05",
+        "g-green": "#34A853",
       },
     },
   },

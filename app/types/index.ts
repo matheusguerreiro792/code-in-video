@@ -5,7 +5,7 @@ export interface Ebook {
   coverUrl: string;
   price: number;
   purchaseUrl: string;
-  category: string;
+  technology: string;
   author: string;
   platform: string;
   createdAt: Date;
@@ -19,7 +19,7 @@ export interface Course {
   imageUrl: string;
   price: number;
   purchaseUrl: string;
-  category: string;
+  technology: string;
   instructor: string;
   platform: string;
   lessons: string[];
@@ -33,7 +33,8 @@ export interface Video {
   description: string;
   imageUrl: string;
   videoUrl: string;
-  category: string;
+  technology: string;
+  operationalSystem: string;
   instructor: string;
   platform: string;
   createdAt: Date;

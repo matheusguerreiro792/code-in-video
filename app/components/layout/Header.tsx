@@ -18,7 +18,7 @@ export default function Header() {
         height={64}
       />
       <h1>
-        Código<label>em Livro e Vídeo</label>
+        Código<span>em Livro e Vídeo</span>
       </h1>
     </header>
   );
