@@ -6,6 +6,6 @@
   }
 
   > button {
-    @apply bg-app-blue hover:bg-blue-600 active:bg-blue-700 text-white font-bold py-4 rounded;
+    @apply bg-g-blue hover:bg-blue-600 active:bg-blue-700 text-white font-bold py-4 rounded;
   }
 }
