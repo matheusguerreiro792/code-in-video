@@ -46,7 +46,7 @@ export default function Ebook({ params }: { params: { id: string } }) {
           </div>
         </>
       ) : (
-        <label>Não há Livros!</label>
+        <label>Não há Livro!</label>
       )}
     </div>
   );

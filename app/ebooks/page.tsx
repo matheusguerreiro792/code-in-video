@@ -30,7 +30,7 @@ export default function Ebooks() {
           />
         ))
       ) : (
-        <label className="text-red-600 font-bold">There is no Ebooks!</label>
+        <label className="text-red-600 font-bold">Não há Livros!</label>
       )}
     </div>
   );
