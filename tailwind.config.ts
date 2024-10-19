@@ -16,6 +16,12 @@ const config: Config = {
         "g-yellow": "#FBBC05",
         "g-green": "#34A853",
       },
+      fontFamily: {
+        ubuntuMono: "Ubuntu Mono, monospace",
+      },
+      height: {
+        home: "calc(100vh - 92px)",
+      }
     },
   },
   plugins: [],

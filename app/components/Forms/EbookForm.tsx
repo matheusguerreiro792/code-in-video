@@ -3,8 +3,6 @@ import { Ebook } from "@/app/types";
 import { createEbook, updateEbook } from "@/app/firebase/firestore";
 import { useGlobalContext } from "@/app/context/globalContext";
 
-import "./EbookForm.css";
-
 interface EbookFormProps {
   ebook?: Ebook | null;
 }
@@ -61,10 +59,14 @@ export default function EbookForm({ ebook }: EbookFormProps) {
   };
 
   return (
-    <div className="ebook-form">
-      <h2>Ebook</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="bg-gray-800 text-white rounded flex flex-col gap-4 justify-center items-center py-5 px-4 w-1/2">
+      <h2 className="text-2xl font-bold text-yellow-400 uppercase">Ebook</h2>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 p-4 w-full items-center bg-gray-600 rounded"
+      >
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="Título"
           value={title}
@@ -72,12 +74,14 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <textarea
+          className="px-3 py-2 text-black w-full rounded"
           placeholder="Descricão"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="URL da Capa"
           value={coverUrl}
@@ -85,6 +89,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="number"
           placeholder="Preço"
           value={price}
@@ -92,6 +97,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="URL da Compra"
           value={purchaseUrl}
@@ -99,6 +105,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="Tecnologia"
           value={technology}
@@ -106,6 +113,7 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="Autor"
           value={author}
@@ -113,13 +121,19 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           required
         />
         <input
+          className="px-3 py-2 text-black w-full rounded"
           type="text"
           placeholder="Plataforma"
           value={platform}
           onChange={(event) => setPlatform(event.target.value)}
           required
         />
-        <button type="submit">{ebook?.id ? "Atualizar" : "Criar"}</button>
+        <button
+          className="bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-200 text-black border-2 border-black text-lg uppercase font-bold text-center py-2 px-3 w-fit rounded"
+          type="submit"
+        >
+          {ebook?.id ? "Atualizar" : "Criar"}
+        </button>
       </form>
     </div>
   );

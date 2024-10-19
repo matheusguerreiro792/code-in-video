@@ -6,8 +6,6 @@ import { useGlobalContext } from "../context/globalContext";
 import EbookForm from "../components/Forms/EbookForm";
 import EbooksList from "../components/Lists/EbooksList/EbooksList";
 
-import "./Admin.css";
-
 export default function Admin() {
   const {
     user,
@@ -38,9 +36,16 @@ export default function Admin() {
   }
 
   return (
-    <div className="admin">
-      <h1>Admin</h1>
-      <button onClick={() => setViewEbookForm(!viewEbookForm)}>Ebook</button>
+    <div className="bg-black flex flex-col flex-1 p-4 gap-4 items-center">
+      <h1 className="text-4xl font-bold bg-yellow-400 p-4 w-full text-center rounded">
+        Admin
+      </h1>
+      <button
+        className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-bold text-lg py-2 px-3 border-2 w-fit rounded"
+        onClick={() => setViewEbookForm(!viewEbookForm)}
+      >
+        Ebook
+      </button>
       {viewEbookForm && <EbookForm />}
       {viewUpdateEbookForm && <EbookForm ebook={ebookClickedForUpdate} />}
       <EbooksList />
