@@ -17,7 +17,7 @@ export default function Header() {
         height={64}
       />
       <h1 className="flex items-baseline font-ubuntuMono gap-2 text-4xl">
-        Código<span className="text-2xl">em Livro e Vídeo</span>
+        código<span className="text-2xl">em Livro e Vídeo</span>
       </h1>
     </header>
   );

@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-950 text-white flex justify-center items-center py-2">
-      RS &copy; {year} Código em Livro e Vídeo
+      RS &copy; {year} código em Livro e Vídeo
     </footer>
   );
 }

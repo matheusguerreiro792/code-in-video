@@ -27,6 +27,12 @@ export default function Nav() {
       >
         Livros
       </Link>
+      <Link
+        href="/videos"
+        className={isActive("/videos") ? `${linkClass} font-bold` : linkClass}
+      >
+        Vídeos
+      </Link>
       {isAdmin && (
         <Link
           href="/admin"
