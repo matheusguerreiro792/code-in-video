@@ -5,6 +5,7 @@ import { GlobalProvider } from "./context/globalContext";
 import Header from "./components/layout/Header";
 import Nav from "./components/layout/Nav";
 import Footer from "./components/layout/Footer";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5934749566698952" crossOrigin="anonymous">
-        </script>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5934749566698952"
+          crossOrigin="anonymous"
+        />
       </head>
       <GlobalProvider>
         <body
