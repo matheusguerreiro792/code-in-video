@@ -134,7 +134,7 @@ export default function VideoForm({ video }: VideoFormProps) {
           className="bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-200 text-black border-2 border-black text-lg uppercase font-bold text-center py-2 px-3 w-fit rounded"
           type="submit"
         >
-          {video?.id ? "Atualizar" : "Criar"}
+          {video?.id ? "Update" : "Create"}
         </button>
       </form>
     </div>

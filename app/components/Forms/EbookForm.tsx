@@ -94,7 +94,6 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           placeholder="Preço"
           value={price}
           onChange={(event) => setPrice(Number(event.target.value))}
-          required
         />
         <input
           className="px-3 py-2 text-black w-full rounded"
@@ -102,7 +101,6 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           placeholder="URL da Compra"
           value={purchaseUrl}
           onChange={(event) => setPurchaseUrl(event.target.value)}
-          required
         />
         <input
           className="px-3 py-2 text-black w-full rounded"
@@ -126,13 +124,12 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           placeholder="Plataforma"
           value={platform}
           onChange={(event) => setPlatform(event.target.value)}
-          required
         />
         <button
           className="bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-200 text-black border-2 border-black text-lg uppercase font-bold text-center py-2 px-3 w-fit rounded"
           type="submit"
         >
-          {ebook?.id ? "Atualizar" : "Criar"}
+          {ebook?.id ? "Update" : "Create"}
         </button>
       </form>
     </div>
