@@ -2,6 +2,8 @@ export interface Ebook {
   id: string;
   title: string;
   description: string;
+  lessons: string[];
+  highlights: string[];
   coverUrl: string;
   price: number;
   purchaseUrl: string;

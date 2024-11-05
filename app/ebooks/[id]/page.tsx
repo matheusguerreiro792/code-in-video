@@ -20,28 +20,51 @@ export default function Ebook({ params }: { params: { id: string } }) {
       {ebook ? (
         <>
           <Image
-            className="w-max h-auto rounded object-contain"
+            className="h-fit rounded object-contain"
             src={ebook.coverUrl}
             alt={ebook.title}
-            width={384}
-            height={600}
+            width={480}
+            height={679}
           />
           <div className="flex flex-col gap-4 text-lg text-justify">
-            <h2 className="text-4xl font-bold">{ebook.title}</h2>
+            <h2 className="text-4xl font-bold text-left">{ebook.title}</h2>
             <p>{ebook.description}</p>
+            {ebook.lessons && (
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl font-bold">O que você vai Aprender:</h3>
+                <ul className="list-disc">
+                  {ebook.lessons.map((lesson) => (
+                    <li className="ml-6" key={lesson}>{lesson}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {ebook.highlights && (
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl font-bold">Destaques do Livro:</h3>
+                <ul className="list-disc">
+                  {ebook.highlights.map((highlight) => (
+                    <li className="ml-6" key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <label className="text-lg font-bold">
               Autor: <span className="font-normal">{ebook.author}</span>
             </label>
-            <label className="text-lg font-bold">
-              Plataforma: <span className="font-normal">{ebook.platform}</span>
-            </label>
+            {ebook.platform && (
+              <label className="text-lg font-bold">
+                Plataforma:{" "}
+                <span className="font-normal">{ebook.platform}</span>
+              </label>
+            )}
             <a
               className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white text-2xl uppercase font-bold py-3 px-4 mt-4 w-fit rounded"
               href={ebook.purchaseUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Compre Agora
+              {ebook.price > 0 ? "Compre Agora" : "Baixe Agora"}
             </a>
           </div>
         </>

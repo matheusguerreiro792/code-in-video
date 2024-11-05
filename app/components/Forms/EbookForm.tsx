@@ -11,6 +11,12 @@ export default function EbookForm({ ebook }: EbookFormProps) {
   const { setViewEbookForm, setViewUpdateEbookForm } = useGlobalContext();
   const [title, setTitle] = useState(ebook?.title || "");
   const [description, setDescription] = useState(ebook?.description || "");
+  const [lessonsText, setLessonsText] = useState(
+    ebook?.lessons.join("\n- ") || ""
+  );
+  const [highlightsText, setHighlightsText] = useState(
+    ebook?.highlights.join("\n- ") || ""
+  );
   const [coverUrl, setCoverUrl] = useState(ebook?.coverUrl || "");
   const [price, setPrice] = useState(ebook?.price || 0);
   const [purchaseUrl, setPurchaseUrl] = useState(ebook?.purchaseUrl || "");
@@ -21,6 +27,8 @@ export default function EbookForm({ ebook }: EbookFormProps) {
   const setInitialValues = () => {
     setTitle("");
     setDescription("");
+    setLessonsText("");
+    setHighlightsText("");
     setCoverUrl("");
     setPrice(0);
     setPurchaseUrl("");
@@ -29,12 +37,25 @@ export default function EbookForm({ ebook }: EbookFormProps) {
     setPlatform("");
   };
 
+  const processTextToArray = (text: string): string[] => {
+    return text
+      .split("\n")
+      .map((i) => i.trim())
+      .filter((i) => i.startsWith("-"))
+      .map((i) => i.substring(1).trim());
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const lessons = processTextToArray(lessonsText);
+    const highlights = processTextToArray(highlightsText);
 
     const ebookData = {
       title: title.trim(),
       description: description.trim(),
+      lessons,
+      highlights,
       coverUrl: coverUrl.trim(),
       price,
       purchaseUrl: purchaseUrl.trim(),
@@ -79,6 +100,21 @@ export default function EbookForm({ ebook }: EbookFormProps) {
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           required
+          rows={10}
+        />
+        <textarea
+          className="px-3 py-2 text-black w-full rounded"
+          placeholder="Lições (uma por linha com o prefixo '-')"
+          value={lessonsText}
+          onChange={(event) => setLessonsText(event.target.value)}
+          rows={5}
+        />
+        <textarea
+          className="px-3 py-2 text-black w-full rounded"
+          placeholder="Destaques (um por linha com o prefixo '-')"
+          value={highlightsText}
+          onChange={(event) => setHighlightsText(event.target.value)}
+          rows={5}
         />
         <input
           className="px-3 py-2 text-black w-full rounded"

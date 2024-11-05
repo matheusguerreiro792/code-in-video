@@ -20,12 +20,12 @@ export default function Ebooks() {
       {ebooks?.length > 0 ? (
         ebooks.map((ebook) => (
           <Image
-            className="h-max w-auto rounded border-2 border-transparent hover:border-2 hover:border-black cursor-pointer active:opacity-75"
+            className="h-fit rounded border-2 border-transparent hover:border-2 hover:border-black cursor-pointer active:opacity-75"
             src={ebook.coverUrl}
             alt={ebook.title}
             key={ebook.id}
-            width={256}
-            height={400}
+            width={300}
+            height={425}
             onClick={() => handleEbookClick(ebook)}
           />
         ))
