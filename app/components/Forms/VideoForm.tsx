@@ -104,7 +104,6 @@ export default function VideoForm({ video }: VideoFormProps) {
           placeholder="Tecnologia"
           value={technology}
           onChange={(event) => setTechnology(event.target.value)}
-          required
         />
         <input
           className="px-3 py-2 text-black w-full rounded"
@@ -112,7 +111,6 @@ export default function VideoForm({ video }: VideoFormProps) {
           placeholder="Sistema Operacional"
           value={operationalSystem}
           onChange={(event) => setOperationalSystem(event.target.value)}
-          required
         />
         <input
           className="px-3 py-2 text-black w-full rounded"
@@ -120,7 +118,6 @@ export default function VideoForm({ video }: VideoFormProps) {
           placeholder="Instructor"
           value={instructor}
           onChange={(event) => setInstructor(event.target.value)}
-          required
         />
         <input
           className="px-3 py-2 text-black w-full rounded"
@@ -128,7 +125,6 @@ export default function VideoForm({ video }: VideoFormProps) {
           placeholder="Plataforma"
           value={platform}
           onChange={(event) => setPlatform(event.target.value)}
-          required
         />
         <button
           className="bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-200 text-black border-2 border-black text-lg uppercase font-bold text-center py-2 px-3 w-fit rounded"
