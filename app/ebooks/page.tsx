@@ -16,7 +16,7 @@ export default function Ebooks() {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-1 flex-wrap p-8 gap-8">
+    <div className="bg-gray-50 flex flex-1 flex-wrap p-4 gap-4 justify-center md:justify-start md:gap-8 md:p-8">
       {ebooks?.length > 0 ? (
         ebooks.map((ebook) => (
           <Image
@@ -30,7 +30,7 @@ export default function Ebooks() {
           />
         ))
       ) : (
-        <label className="text-red-600 font-bold">Não há Livros!</label>
+        <label className="text-red-600 font-bold">Carregando Livros...</label>
       )}
     </div>
   );

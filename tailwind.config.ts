@@ -21,7 +21,7 @@ const config: Config = {
       },
       height: {
         home: "calc(100vh - 92px)",
-      }
+      },
     },
   },
   plugins: [],

@@ -58,7 +58,7 @@ const GlobalContext = createContext<GlobalContextType>({
 const EBOOKS_CACHE_KEY = "cached_ebooks";
 const VIDEOS_CACHE_KEY = "cached_videos";
 
-const CACHE_EXPIRY_TIME = 1000 * 60 * 5; // * 16; // 16 hours
+const CACHE_EXPIRY_TIME = 1000 * 60 * 15; // * 16; // 16 hours
 
 export const GlobalProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);

@@ -30,7 +30,9 @@ export default function page() {
           />
         ))
       ) : (
-        <label className="text-red-600 font-bold">Não há Vídeos!</label>
+        <label className="text-red-600 font-bold">
+          Não há Vídeos no momento. Por favor, aguarde.
+        </label>
       )}
     </div>
   );

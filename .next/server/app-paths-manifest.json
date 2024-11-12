@@ -1,7 +1,6 @@
 {
   "/page": "app/page.js",
   "/ebooks/page": "app/ebooks/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/login/page": "app/login/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/ebooks/[id]/page": "app/ebooks/[id]/page.js",
+  "/videos/page": "app/videos/page.js"
 }

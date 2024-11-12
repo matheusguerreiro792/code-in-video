@@ -16,7 +16,7 @@ export default function Ebook({ params }: { params: { id: string } }) {
   }, [ebooks, params.id]);
 
   return (
-    <div className="bg-gray-50 flex flex-1 p-8 gap-8">
+    <div className="bg-gray-50 flex flex-1 flex-wrap justify-center p-4 gap-4 md:p-6 md:gap-6 lg:flex-nowrap lg:gap-8 lg:p-8">
       {ebook ? (
         <>
           <Image
@@ -26,7 +26,7 @@ export default function Ebook({ params }: { params: { id: string } }) {
             width={480}
             height={679}
           />
-          <div className="flex flex-col gap-4 text-lg text-justify">
+          <div className="flex flex-col gap-2 text-lg text-justify md:gap-3 lg:gap-4">
             <h2 className="text-4xl font-bold text-left">{ebook.title}</h2>
             <p>{ebook.description}</p>
             {ebook.lessons && (
@@ -34,7 +34,9 @@ export default function Ebook({ params }: { params: { id: string } }) {
                 <h3 className="text-xl font-bold">O que você vai Aprender:</h3>
                 <ul className="list-disc">
                   {ebook.lessons.map((lesson) => (
-                    <li className="ml-6" key={lesson}>{lesson}</li>
+                    <li className="ml-6" key={lesson}>
+                      {lesson}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -44,7 +46,9 @@ export default function Ebook({ params }: { params: { id: string } }) {
                 <h3 className="text-xl font-bold">Destaques do Livro:</h3>
                 <ul className="list-disc">
                   {ebook.highlights.map((highlight) => (
-                    <li className="ml-6" key={highlight}>{highlight}</li>
+                    <li className="ml-6" key={highlight}>
+                      {highlight}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -59,7 +63,7 @@ export default function Ebook({ params }: { params: { id: string } }) {
               </label>
             )}
             <a
-              className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white text-2xl uppercase font-bold py-3 px-4 mt-4 w-fit rounded"
+              className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white text-2xl uppercase font-bold py-3 px-4 mt-1 w-full text-center rounded md:mt-2 lg:w-fit"
               href={ebook.purchaseUrl}
               target="_blank"
               rel="noreferrer"

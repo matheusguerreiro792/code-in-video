@@ -16,15 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/ebooks/page.js"
     ],
-    "/admin/page": [
+    "/ebooks/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/page.js"
+      "static/chunks/app/ebooks/[id]/page.js"
     ],
-    "/login/page": [
+    "/videos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
+      "static/chunks/app/videos/page.js"
     ]
   }
 }
