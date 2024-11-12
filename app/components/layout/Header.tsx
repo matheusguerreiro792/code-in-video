@@ -11,14 +11,11 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <Image
-        src="/code_in_book_and_video.png"
+        src="/code_in_book_and_video_x_50_with_white_title_and_subtitle.png"
         alt="Código em Livro e Vídeo"
-        width={64}
+        width={237}
         height={64}
       />
-      <h1 className="flex items-baseline font-ubuntuMono gap-2 text-4xl">
-        código<span className="text-2xl">em Livro e Vídeo</span>
-      </h1>
     </header>
   );
 }
