@@ -11,8 +11,8 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <Image
-        src="/code_in_book_and_video_x_50_with_white_title_and_subtitle.png"
-        alt="Código em Livro e Vídeo"
+        src="/code_in_video_x_50_with_white_title_and_subtitle.png"
+        alt="Código em Vídeo"
         width={237}
         height={64}
       />

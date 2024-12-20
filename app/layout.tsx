@@ -19,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Código em Livro e Vídeo",
+  title: "código em Vídeo",
   description: "...",
 };
 
